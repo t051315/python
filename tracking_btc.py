@@ -37,7 +37,7 @@ print('Press Ctrl+C to stop script!')
 url = "https://finance.google.com/finance?q=currency:btc"
 
 def scrape_btc () :
-  timer = threading.Timer (10.0, scrape_btc)
+  timer = threading.Timer (90.0, scrape_btc)
   timer.start()
   indexes_scraper = moneyMod1.Scraper (url, False)
   btcData = indexes_scraper.get_bitcoin ()
@@ -45,6 +45,7 @@ def scrape_btc () :
   print ("Taken at:", datetime.datetime.now().time())
   print ("Bitcoin date:", data[3], data[5], data[6])
   print ("Bitcoin:", data[0], "(" + data[1] + "/" + data[2] + ")")
+  print ("Bitcoin BASE:", str(round((float(data[0]) - float(data[1])), 4)))
   print('Press Ctrl+C to stop script!')
 
 if __name__ == "__main__" :

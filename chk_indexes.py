@@ -86,6 +86,7 @@ print ("Bitcoin quote date:", data[3])
 print ("Bitcoin:", data[0])
 print ("Bitcoin Change:", data[1])
 print ("Bitcoin % Change:", data[2])
+print ("Bitcoin BASE:", str(round((float(data[0]) - float(data[1])), 4)))
 print ( )
 
 input ("Press Enter to exit.")
